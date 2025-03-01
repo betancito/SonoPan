@@ -13,12 +13,11 @@ export default function CategoryButton({ title, icon, onPress, isSelected = fals
   return (
     <Pressable
       onPress={onPress}
-      className={`flex-row items-center px-4 py-3 m-5 rounded-full border ${
+      className={`flex-row items-center justify-center px-4 py-3 m-5 rounded-full border ${
         isSelected ? "bg-primary border-primary" : "bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700"
       }`}
       style={({ pressed }) => [pressed && { opacity: 0.8 }]}
     >
-      <View className="mr-2">{icon || <Tag size={18} color={isSelected ? "white" : "#6B7280"} />}</View>
       <Text className={`font-medium ${isSelected ? "text-white" : "text-gray-700 dark:text-gray-200"}`}>{title}</Text>
     </Pressable>
   )
