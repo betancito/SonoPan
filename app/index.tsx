@@ -1,17 +1,22 @@
-import { View, Text } from 'react-native';
-import React from 'react';
+import { View, Text,ScrollView, Pressable} from 'react-native';
+import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import CategoryButton from '@/components/category-button';
-import CategoryList from '@/components/category-list';
+import CategoryList from '@/components/category/category-list';
+import ProductGrid from '@/components/product/Product-grid';
+import ProductModal from '@/components/product/Product-modal';
+import { Link } from 'expo-router';
+
 
 const index = () => {
+    const [seeModal, setSeeModal] = useState(false)
     return (
-        <SafeAreaView className='bg-purple-400'>
-            <View>
-                <Text className='text-2xl text-red-600'>Components to be used</Text>
-                <CategoryList/>
-            </View>
-            <View className='viewBox' />
+        <SafeAreaView>
+                <View className='pt-5 pb-5 w-max m-auto'>
+                    <Text className='text-5xl text-white font-extrabold'>CATEGORIAS</Text>
+                </View>
+                <ScrollView>
+                    <CategoryList/>
+                </ScrollView>
         </SafeAreaView>
     );
 };

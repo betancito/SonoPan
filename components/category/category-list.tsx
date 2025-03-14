@@ -3,11 +3,17 @@ import { View, ScrollView } from "react-native"
 import CategoryButton from "./category-button"
 
 const categories = [
-  { id: "1", title: "Exmaple" }
+  { id: "1", title: "PANES" },
+  { id: "2", title: "PRODUCTO QUESO" },
+  { id: "3", title: "FRITOS" },
+  { id: "4", title: "DESAYUNOS" },
+  { id: "5", title: "ALMUERZOS" },
+  { id: "6", title: "VARIOS" },
 ]
 
+
+
 export default function CategoryList() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
 
   return (
     <View className="py-4">
@@ -18,10 +24,9 @@ export default function CategoryList() {
       >
         {categories.map((category) => (
           <CategoryButton
+            category_id = {category.id}
             key={category.id}
             title={category.title}
-            isSelected={selectedCategory === category.id}
-            onPress={() => setSelectedCategory(category.id)}
           />
         ))}
       </ScrollView>
